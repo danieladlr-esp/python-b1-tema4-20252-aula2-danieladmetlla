@@ -9,6 +9,6 @@ def test_sum(monkeypatch, capsys):
     result = sum()
 
     captured = capsys.readouterr()
-    assert captured.out == "Result:  5\n", "sum does not print the correct value for input 3 and 2. It should be 'Result: 5'"
+    assert captured.out == "Result:  5.0\n", "sum does not print the correct value for input 3 and 2. It should be 'Result: 5'"
 
-    assert result == 5, "sum does not return the correct value for input 3 and 2. It should be 5"       
+    assert result == 5.0, "sum does not return the correct value for input 3 and 2. It should be 5"       

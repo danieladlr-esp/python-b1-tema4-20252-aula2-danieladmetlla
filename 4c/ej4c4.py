@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 """
 Enunciado:
 Se pide crear una interfaz "Animal" que tenga un método abstracto "talk".
@@ -55,31 +56,33 @@ Exemple:
          "Polly"        
 """
 # Write abstract class Animal here
+class Animal(ABC):
+    @abstractmethod
+    def talk(self):
+        pass
+
 
 # Corret and overwrite class Dog(Animal) here 
-class Dog():
+class Dog(Animal):
     def __init__(self, name):
         self.name = name
 
     def talk(self):
-        pass
+        return "¡Guau!"
 
 # Corret and overwrite class Cat(Animal) here 
-class Cat():
+class Cat(Animal):
     def __init__(self, name):
         self.name = name
     def talk(self):
-        pass
+        return "¡Meow!"
 
 # Corret and overwrite class Parrot(Animal) here 
-class Parrot():
+class Parrot(Animal):
     def __init__(self, name):
         self.name = name
     def talk(self):
-        pass
-
-
-
+        return "¡Whistle!"
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
@@ -90,4 +93,4 @@ def test_code():
 	for animal in animals:
 	    print(f"{animal.name} dice {animal.talk()}")
 
-#test_code()
+test_code()

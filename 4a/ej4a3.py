@@ -36,13 +36,40 @@ Exemple:
 """
 
 
-def descending_list_iterator(numbers_list):
-    # Write here your code
-    pass
+def descending_list_iterator(numbers_list:float):    # amb funció recursiva
+    lista_local = numbers_list.copy()
+
+    if not lista_local:
+        return lista_local
+    try:
+        maxi = max(lista_local)
+        lista_local.remove(maxi)
+        return [maxi] + descending_list_iterator(lista_local)
+    except TypeError:
+        raise TypeError("Los valores de numbers_list deben ser int/float")
+
+
+def descending_list_for(numbers_list):              # amb FOR
+    lista_local = numbers_list.copy()
+
+    if not lista_local:
+        return lista_local
+    
+    nueva_lista = []
+    try:
+        for i in range(len(numbers_list)):
+            nueva_lista.append(max(lista_local))
+            lista_local.remove(max(lista_local))
+        return nueva_lista
+    except TypeError:
+        raise TypeError("Los valores de numbers_list deben ser int/float")
+    
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# numeros = [2, 3, 6, 9, 11, 12, 15, 18]
-# print(list(descending_list_iterator(numeros)))  
+numeros = [2, 3, 6, 9, 11, 12, 15, 18,6]
+print(list(descending_list_iterator(numeros)))
+print(descending_list_for(numeros))

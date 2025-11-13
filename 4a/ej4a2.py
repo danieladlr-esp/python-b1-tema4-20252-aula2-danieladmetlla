@@ -44,11 +44,22 @@ Exemple:
 
 
 def count_fruits(fruits_list):
-    # Write here your code
-    pass
+    dict_fruits = {}
+    if not fruits_list:
+        return dict_fruits
+    try:
+        for i in fruits_list:
+            if i not in dict_fruits:
+                dict_fruits[i] = 1
+            else:
+                dict_fruits[i] += 1
+        return dict_fruits
+    except TypeError:
+        return "Error: La lista contiene elementos no hashables." 
+    
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# fruits = ['apple', 'banana', 'orange', 'apple', 'kiwi', 'banana', 'kiwi', 'kiwi', 'kiwi']
-# print(count_fruits(fruits))
+fruits = [1, 'banana', 1, (1,2,3), 'apple', (1,2,3),'kiwi', 'banana', 'kiwi', 'kiwi', 'kiwi']
+print(count_fruits(fruits))

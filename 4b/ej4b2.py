@@ -49,24 +49,30 @@ Exemple:
 """
 
 
-def average_score_ram(scores_dict):
-    # Store the dictionary in RAM
-    # Write here your code
-    pass
+def average_score_ram(scores_dict:list[float]):
+    media = 0
+    if not scores_dict:
+        raise ValueError("El diccionario debe contener valores")
+    try:
+        for i in scores_dict:
+            media += scores_dict[i]
+        return media/len(scores_dict)
+    except TypeError:
+        raise TypeError("Los valores deben ser int/float")
 
 
 def average_score_heap(scores_dict):
     # Store the dictionary in Heap    
     score_list = list(scores_dict.values())
     # You should correct and overwrite something in the following line.
-    heap_average = sum(score_list) 
+    heap_average = sum(score_list)/len(score_list)
     return heap_average
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# scores_dict = {"Juan": 6.7, "Maria": 9.1, "Pedro": 6.5, "Tomas": 8.2, "Julio": 9}
+scores_dict = {"Juan": 6.7, "Maria": 9.1, "Pedro": 6.5, "Tomas": 8.2, "Julio": 9}
 
-# print(average_score_ram(scores_dict))
-# print(average_score_heap(scores_dict))
+print(average_score_ram(scores_dict))
+print(average_score_heap(scores_dict))

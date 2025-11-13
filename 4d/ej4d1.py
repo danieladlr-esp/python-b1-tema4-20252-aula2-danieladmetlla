@@ -36,9 +36,21 @@ Exemple:
 
 def sum():
     # Write here your code
-    pass
+    try:
+        num_1 = float(input("introduce el primer número"))
+        num_2 = float(input("introduce el segundo número"))
+        if not num_1 or not num_2:
+            print("Debes introducir un valor")
+            sum()
+        resultado = num_1 + num_2
+        print("Result: ",resultado)
+        return resultado
+         
+    
+    except Exception as error:
+        return f"Ha habido un {error}"
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# sum()
+print(sum())
