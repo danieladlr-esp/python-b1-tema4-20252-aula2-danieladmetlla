@@ -81,11 +81,19 @@ def create_list(length_list):
     A tuple containing two lists of integers, the first one created in RAM and
     the second one created in Heap by reusing the first list.
     """
+    if length_list >= 0:
+        lists = ([], )
 
-    # Write here your code
-    pass
+        for i in range(length_list):
+            lists[0].append(random.randint(0, 100))
+
+        lists += copy.deepcopy(lists)
+
+        return lists
+    else:
+        raise ValueError("The number must be positive")
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(create_list(6))
+print(create_list(6))

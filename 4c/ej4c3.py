@@ -84,33 +84,37 @@ class Shape:
         return self.sides
     
 # Corret and overwrite class Triangle(Shape) here
-class Triangle():
+class Triangle(Shape):
     def __init__(self, sides, base, height):        
-        pass
-
+        super().__init__(sides)
+        self.base = base
+        self.height = height
+    
     def get_area(self):
-        pass
+        return (self.base * self.height) / 2
 
 # Corret and overwrite class Rectangle(Shape) here
 class Rectangle(Shape):
     def __init__(self, sides, length, width):        
-        pass
+        super().__init__(sides)
+        self.length = length
+        self.width = width
 
     def get_area(self):
-        pass
+        return self.length * self.width
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
 # # Create a triangle with base 4 and height 3
-#triangle = Triangle([3, 4, 5], base=4, height=3)
+triangle = Triangle([3, 4, 5], base=4, height=3)
 # # Get the area of the triangle
-#print(triangle.get_area()) # Output: 6.0
-#print (triangle.get_sides()) # shows sides of the triangle
+print(triangle.get_area()) # Output: 6.0
+print (triangle.get_sides()) # shows sides of the triangle
 
 # # Create a rectangle with length 5 and width 2
-#rectangle = Rectangle([5, 5, 2, 2], length=5, width=2)
+rectangle = Rectangle([5, 5, 2, 2], length=5, width=2)
 # # Get the area of the rectangle
-#print(rectangle.get_area()) # Output: 10
-#print (rectangle.get_sides()) # shows sides of the rectangle
+print(rectangle.get_area()) # Output: 10
+print (rectangle.get_sides()) # shows sides of the rectangle

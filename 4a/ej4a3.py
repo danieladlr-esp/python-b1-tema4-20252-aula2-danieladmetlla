@@ -37,12 +37,20 @@ Exemple:
 
 
 def descending_list_iterator(numbers_list):
-    # Write here your code
-    pass
+    if len(numbers_list) > 1:
+        numbers_list.sort()     # Primero ordenamos la lista por orden ascendente
+
+        # Y luego invertimos la lista a orden descendiente
+        descending_list = []
+        for i in range(len(numbers_list) - 1, -1, -1):
+            descending_list.append(numbers_list[i])
+        return descending_list
+    else:
+        return numbers_list
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# numeros = [2, 3, 6, 9, 11, 12, 15, 18]
-# print(list(descending_list_iterator(numeros)))  
+numeros = [2, 3, 6, 9, 11, 12, 15, 18]
+print(list(descending_list_iterator(numeros)))  

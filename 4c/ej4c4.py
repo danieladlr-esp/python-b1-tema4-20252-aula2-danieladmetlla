@@ -62,21 +62,21 @@ class Dog():
         self.name = name
 
     def talk(self):
-        pass
+        return "¡Guau!"
 
 # Corret and overwrite class Cat(Animal) here 
 class Cat():
     def __init__(self, name):
         self.name = name
     def talk(self):
-        pass
+        return "¡Meow!"
 
 # Corret and overwrite class Parrot(Animal) here 
 class Parrot():
     def __init__(self, name):
         self.name = name
     def talk(self):
-        pass
+        return "¡Whistle!"
 
 
 
@@ -90,4 +90,4 @@ def test_code():
 	for animal in animals:
 	    print(f"{animal.name} dice {animal.talk()}")
 
-#test_code()
+test_code()
