@@ -84,20 +84,31 @@ class Shape:
         return self.sides
     
 # Corret and overwrite class Triangle(Shape) here
-class Triangle():
+class Triangle(Shape):
     def __init__(self, sides, base, height):        
-        pass
+        if len(sides) != 3:
+            raise ValueError("Un triángulo debe tener exactamente 3 lados")
+
+        super()._int_(sides)
+        self.base = base
+        self.height = height
+        
 
     def get_area(self):
-        pass
+        return (self.base * self.height) / 2
 
 # Corret and overwrite class Rectangle(Shape) here
 class Rectangle(Shape):
     def __init__(self, sides, length, width):        
-        pass
+        if len(sides) != 4:
+            raise ValueError("Un rectángulo debe tener exactamente 4 lados")
+
+        super()._int_(sides)
+        self.lenght = lenght
+        self.width = width
 
     def get_area(self):
-        pass
+        return self.lenght * self.width
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
