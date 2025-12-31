@@ -92,21 +92,20 @@ class Person:
 
     # Method that returns the description of the person
     def describe(self):
-        # Write here your code
-        pass
+        return f"{self.name} is {self.age} years old."
 
 
 # Class that represents a student
 class Student(Person):
     # Constructor
     def __init__(self, name, age, major):
-        # Write here your code
-        pass
+        super()._init_(name, age)
+        self.major = major
 
     # Method that returns the description of the student
     def describe(self):
-        # Write here your code
-        pass
+        parent_description = super()-describe()
+        return f"{parent_description} Studies {self.major}."
 
 
 person_1 = Person("Juan", 30)
